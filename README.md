@@ -12,4 +12,4 @@ Part 6: Reinforcement Learning\
 Part 7: Natural Language Processing\
 Part 8: Deep Learning\
 Part 9: Dimensionality Reduction\
-Part 10: Model Selection Boosting\
+Part 10: Model Selection Boosting
