@@ -25,7 +25,10 @@ y_pred = regressor.predict(X_test)
 
 #Visualizing the Training Set results
 from sklearn.metrics import r2_score # The more related the two variables, the closer to 1 the r2 score becomes
-print(r2_score(y_train, regressor.predict(X_train)))
+print(f"R squared value is {r2_score(y_train, regressor.predict(X_train))}")
+print(f"Adjusted R squared value is {1 - (1 - (r2_score(y_train, regressor.predict(X_train)))*(r2_score(y_train, regressor.predict(X_train))))*(len(y) - 1)/(len(y)-X.shape[1]-1)}")
+print(X.shape[1]-1)
+print(len(y)) #attempt to add the Adjusted R squared value
 plt.scatter(X_train, y_train, color = 'red')
 plt.plot(X_train, regressor.predict(X_train), color = 'blue')
 plt.title('Salary vs Experience (Training Set)')
@@ -34,7 +37,7 @@ plt.ylabel('Salary')
 plt.show()
 
 #Visualizing the Test Set results
-print(r2_score(y_test, regressor.predict(X_test)))
+print(f"R squared value is {r2_score(y_test, regressor.predict(X_test))}")
 plt.scatter(X_test, y_test, color = 'red')
 plt.plot(X_test, y_pred, color = 'blue')
 plt.title('Salary vs Experience (Test Set)')
